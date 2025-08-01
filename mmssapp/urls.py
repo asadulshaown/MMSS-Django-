@@ -1,0 +1,11 @@
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('',views.home, name='home_page' ),
+    path('views/', views.view, name='views_page'),
+    path('create_document/', views.create_document, name='document_page'),
+    path('create_details', views.Create_Details, name='create_details'),
+    path('create_boder/', views.Create_Boder, name='create_boder'),
+]

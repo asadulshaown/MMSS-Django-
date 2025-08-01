@@ -1,0 +1,85 @@
+
+
+  {% load static %}
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Images/Logo.png" type="image/x-icon">
+    <title>Create Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+  </head>
+  <body class=" bg-light">
+
+    <div class=" container bg-white rounded border border-1 mt-4">
+
+      <h1 class=" text-center mt-2 text-success fw-semibold">Mass management System</h1>
+
+      <div class=" d-flex justify-content-between">
+        <a class=" btn btn-outline-secondary me-2" href="{% url 'home_page' %}">Home</a>
+        <!-- <a class=" btn btn-dark me-2" href="{% url 'views_page' %}">Views</a> -->
+    </div>
+
+    <hr>
+    <hr>
+
+    <div class=" d-md-flex gap-md-3 justify-content-around mt-4">
+      {% for item in data %}
+      <div class=" d-flex ">
+        <h3 class="fw-semibold text-success me-2">Mass Name:</h3>
+        <h3 class=" text-muted fst-italic">{{item.messName}}</h3>
+      </div>
+      
+      <div class=" d-flex text-center">
+        <h3 class="fw-semibold text-success me-2">Mounth Name:</h3>
+        <h3 class=" text-muted fst-italic">{{item.mounthName}}</h3>
+      </div>
+
+      <div class=" d-flex">
+        <h3 class="fw-semibold text-success me-2">Address:</h3> 
+        <h3 class=" text-muted fst-italic">{{item.address}}</h3>
+      </div>
+      {% endfor %}     
+    </div>
+
+    <hr>
+    <hr>
+
+    <!-- first form -->
+     <form method="post">
+      {% csrf_token %}
+      <div class=" d-md-flex gap-md-3 justify-content-around">
+        <div class="d-grid justify-content-center">
+          <strong class="">Mess Name: (15C)</strong>
+          <input class=" p-2" type="text" name="messName"  placeholder="Enter mass name" maxlength="15" autofocus required>
+        </div>
+
+        <div class="d-grid justify-content-center">
+          <strong class="" >Mounth Name: (15C)</strong>
+          <input class=" p-2" type="text" name="mounthName"  placeholder="Enter month name" required>
+        </div>
+        
+        <div class="d-grid justify-content-center">
+          <strong class="" >Address: (15C) </strong>
+          <input class=" p-2" type="text" name="address" placeholder="Enter address" maxlength="15" required>
+        </div>
+      </div>
+
+      <div class=" d-flex justify-content-center mt-4 mb-5">
+        <button class=" btn btn-secondary " type="submit">Submit</button>
+      </div>
+     </form>
+
+
+    </div>
+    
+    
+
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+    <script src="{% static 'js/create_document.js' %}"></script>
+  </body>
+  </html>

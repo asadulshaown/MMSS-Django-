@@ -1,0 +1,114 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>views</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">  
+</head>
+<body>
+  
+  <div class=" container">
+    <h1 class=" text-center text-dark mt-4 d-print-none">Mass management System</h1>
+    <div class=" d-flex gap-3 justify-content-end d-print-none">
+      <a  class=" btn btn-dark " href="{% url 'home_page' %}">Home</a>
+    </div>
+
+  <div class="d-flex justify-content-between mt-4">
+    {% for item in data %}
+    <div class=" d-inline-flex">
+      <h3 class=" m-auto"> Mass Name:- </h3>
+      <h4 class=" text-secondary m-auto">{{item.messName}}</h4>
+    </div>
+
+    <div class=" d-inline-flex">
+      <h3 class=" m-auto">Mounth Name:- </h3>
+      <h4 class=" text-secondary m-auto">{{item.mounthName}}</h4>
+    </div>
+
+    <div class=" d-inline-flex">
+      <h3 class=" m-auto"> Address:- </h3>
+      <h4 class=" text-secondary m-auto">{{item.address}}</h4>
+    </div>
+    {% endfor %}  
+  </div>
+
+  <hr>
+  <hr>
+
+  <div class="d-md-flex justify-content-between">
+    {% for item in data2 %}
+    <div class=" d-inline-flex">
+      <h3 class=" text-secondary m-auto">Manager Name:- </h3>
+      <h4 class="m-auto">{{item.managerName}}</h4>
+    </div>
+
+    <div class=" d-inline-flex">
+      <h3 class=" text-secondary m-auto">Meal Charge:- </h3>
+      <h4 class=" m-auto">{{item.mealCharge}}</h4>
+    </div>
+
+    <div class=" d-inline-flex">
+      <h3 class=" text-secondary m-auto">Total Mountly Cost:- </h3>
+      <h4 class=" m-auto">{{item.totalMounthlyCost}}</h4>
+    </div>
+
+    <div class=" d-inline-flex">
+      <h3 class=" text-secondary m-auto">Total Meal:- </h3>
+      <h4 class=" m-auto">{{item.totalMeal}}</h4>
+    </div>
+    {% endfor %}
+  </div>
+
+  <hr>
+  <hr>
+
+  <h3 class=" text-center text-secondary mt-5 mb-3">Boder Info...</h3>
+
+  <table class=" table table-striped">
+    <tr class=" text-nowrap">
+      <th>Border Name</th>
+      <th>Border Meal</th>
+      <th>Boder Meal Cost</th>
+      <th>Shaf Bill</th>
+      <th>Wifi Bill</th>
+      <th>Dust Bill</th>
+      <th>Border Total Cost</th>
+      <th>Store Money</th>
+      <th>Deu---</th>
+      <th>Return</th>
+      <th>Additional Cost</th>
+    </tr>
+
+    {% for item in data3 %}
+    <tr>
+      <td>{{ item.BoderName }}</td>
+      <td>{{ item.BoderMeal }}</td>
+      <td>{{ item.BoderMealCost}}</td>
+      <td>{{ item.ShafBill }}</td>
+      <td>{{ item.WifiBill }}</td>
+      <td>{{ item.DustBill }}</td>
+      <td>{{ item.BorderTotalCost }}</td>
+      <td>{{ item.ReciveMoney }}</td>
+      <td>{{ item.Deu }}</td>
+      <td>{{ item.Return }}</td>
+      <td>{{ item.BoderAdditionalCost }}</td>      
+    </tr>
+    {% endfor %}
+    
+  </table>
+
+  <div class=" mt-5 mb-5 d-flex gap-3 justify-content-end d-print-none">
+    <a  class=" btn btn-dark " href="{% url 'create_boder' %}">Create Boder</a>
+    <button id="print"  class=" btn btn-warning" type="button">Print Now</button>
+  </div>
+
+  </div>
+  <script src="{% static 'js/button.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+  <script src="{% static 'js/button.js'%}"></script>
+</body>
+</html>

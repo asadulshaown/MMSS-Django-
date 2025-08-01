@@ -1,0 +1,56 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Details</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body class=" bg-light">
+
+  <div class=" container bg-white border border-1 rounded mt-4">
+
+    <div>
+      <h1 class=" text-center mt-2 mb-md-4 text-success fw-semibold">Mass management System</h1>
+
+      <a class=" btn btn-outline-secondary" href="{% url 'document_page' %}">Back</a>
+    </div>
+
+    <hr>
+    <hr>
+
+    <!-- second form -->
+      <form method="post">
+        {% csrf_token %}
+        <div class=" d-md-flex gap-md-3 justify-content-around">
+
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong class=" mb-2">Total Mounthly Cost(TMC): </strong>
+          <input class=" p-2" type="number" min="0" name="tmc"  placeholder="Enter number" required >
+        </div>
+        
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong class=" mb-2" >Total Meal(TM): </strong>
+          <input class=" p-2" type="number" name="totalMeal"  min="0" placeholder="Enter number" required>
+        </div>
+        
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong class=" mb-2" >Additonal Cost(AC): </strong>
+          <input class=" p-2" type="number" name="aditonalCost"  placeholder="Enter number">
+        </div>
+
+          <div class=" d-grid justify-content-center mb-3 mb-md-0">
+          <strong class=" mb-2 " >Manager Name: </strong>
+          <input class=" p-2 " type="text" name="managerName"  placeholder="Enter name">
+        </div>
+      </div>
+      <div class=" d-flex justify-content-center mt-4 mb-4">
+        <button class=" btn btn-secondary " type="submit">Submit</button>
+      </div>
+      </form>
+  </div>
+  
+</body>
+</html>

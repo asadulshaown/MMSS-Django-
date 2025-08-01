@@ -1,0 +1,90 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Boder</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body class=" bg-light">
+
+  <div class=" container bg-white border border-1 rounded mt-4">
+   
+    <div class="">
+      <h1 class=" text-center text-success mt-2 ">Mass management System</h1>
+       <a class=" btn btn-outline-secondary" href="{% url 'create_details' %}">Back</a>
+
+    </div>
+    <hr>
+    <hr>
+
+    <!-- <div class=" mt-5 d-flex justify-content-end">
+    <a class=" btn btn-dark " href="{% url 'views_page' %}">Views</a>
+    </div> -->
+
+      <!-- third form -->
+    <form class=" mt-5 mb-4" method="post">
+      {% csrf_token %}
+
+      <div class=" d-md-flex gap-md-3 justify-content-around">
+
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong >Boder Name(BN):</strong>
+          <input class=" p-2" type="text" name="boderName"  placeholder="Enter Name" required>
+        </div>
+
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong >Boder Meal(BM): </strong>
+          <input class=" p-2" type="number" min="0" name="boderMeal" step="any" placeholder="Enter number" required>
+        </div>
+
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong>Meal Charge(MC): </strong>
+          {% for i in data2 %}
+          <input class=" p-2" type="number" min="0" name="mealCharge"  value="{{ i.mealCharge }}" step="any" placeholder="Meal Charge"  >
+          {% endfor %}
+        </div>
+        
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong> Shaf Bill(SB): </strong>
+          <input class=" p-2" type="number" min="0" name="shafBill"  placeholder="Enter number">
+        </div>        
+      </div>
+
+      <hr>
+      <hr>
+
+      <div class=" d-md-flex gap-md-3 justify-content-around">
+
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong>Wifi Bill(WB): </strong>
+          <input class=" p-2" type="number" min="0" name="wifiBill"  placeholder="Enter number">
+        </div>
+        
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong>Dust Bill(DB): </strong>
+          <input class=" p-2" type="number" min="0" name="dustBill"  placeholder="Enter number">
+        </div>
+        
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong>Recive Money(RM): </strong>
+          <input class=" p-2" type="number" min="0" name="reciveMoney"  placeholder="Enter number" required>
+        </div>
+        
+        <div class="d-grid justify-content-center mb-3 mb-md-0">
+          <strong>Boder Additional Cost(BAC): </strong>
+          <input class=" p-2" type="number" name="boderAdditionalCost" placeholder="Enter number">
+        </div>
+      </div>
+
+      <div class=" d-flex justify-content-center mt-4 mb-4">
+        <button class=" btn btn-secondary " type="submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+  
+</body>
+</html>
