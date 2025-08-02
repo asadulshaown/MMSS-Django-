@@ -9,29 +9,31 @@
   <title>views</title>
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">  
 </head>
-<body>
+<body class=" bg-light">
   
-  <div class=" container">
-    <h1 class=" text-center text-dark mt-4 d-print-none">Mass management System</h1>
-    <div class=" d-flex gap-3 justify-content-end d-print-none">
-      <a  class=" btn btn-dark " href="{% url 'home_page' %}">Home</a>
-    </div>
+  <div class=" container bg-white border border-1 rounded mt-4">
+    <h1 class=" text-center text-success fw-bold mt-4 d-print-none">Mass management System</h1>
 
-  <div class="d-flex justify-content-between mt-4">
+    <a  class=" btn btn-outline-secondary" href="{% url 'home_page' %}">Home</a>
+    <hr>
+    <hr>      
+
+
+  <div class="d-md-flex justify-content-between mt-4">
     {% for item in data %}
     <div class=" d-inline-flex">
-      <h3 class=" m-auto"> Mass Name:- </h3>
-      <h4 class=" text-secondary m-auto">{{item.messName}}</h4>
+      <h3 class=" fw-semibold text-success"> Mass Name:- </h3>
+      <h3 class=" text-secondary fst-italic">{{item.messName}}</h3>
     </div>
 
     <div class=" d-inline-flex">
-      <h3 class=" m-auto">Mounth Name:- </h3>
-      <h4 class=" text-secondary m-auto">{{item.mounthName}}</h4>
+      <h3 class="fw-semibold text-success">Mounth Name:- </h3>
+      <h3 class=" text-secondary fst-italic">{{item.mounthName}}</h3>
     </div>
 
     <div class=" d-inline-flex">
-      <h3 class=" m-auto"> Address:- </h3>
-      <h4 class=" text-secondary m-auto">{{item.address}}</h4>
+      <h3 class="fw-semibold text-success"> Address:- </h3>
+      <h3 class="text-secondary fst-italic">{{item.address}}</h3>
     </div>
     {% endfor %}  
   </div>
@@ -42,22 +44,22 @@
   <div class="d-md-flex justify-content-between">
     {% for item in data2 %}
     <div class=" d-inline-flex">
-      <h3 class=" text-secondary m-auto">Manager Name:- </h3>
+      <h3 class=" text-success fw-semibold m-auto">Manager Name:- </h3>
       <h4 class="m-auto">{{item.managerName}}</h4>
     </div>
 
     <div class=" d-inline-flex">
-      <h3 class=" text-secondary m-auto">Meal Charge:- </h3>
+      <h3 class=" text-success fw-semibold m-auto">Meal Charge:- </h3>
       <h4 class=" m-auto">{{item.mealCharge}}</h4>
     </div>
 
     <div class=" d-inline-flex">
-      <h3 class=" text-secondary m-auto">Total Mountly Cost:- </h3>
+      <h3 class=" text-success fw-semibold m-auto">Total Mountly Cost:- </h3>
       <h4 class=" m-auto">{{item.totalMounthlyCost}}</h4>
     </div>
 
     <div class=" d-inline-flex">
-      <h3 class=" text-secondary m-auto">Total Meal:- </h3>
+      <h3 class=" text-success fw-semibold m-auto">Total Meal:- </h3>
       <h4 class=" m-auto">{{item.totalMeal}}</h4>
     </div>
     {% endfor %}
@@ -66,9 +68,9 @@
   <hr>
   <hr>
 
-  <h3 class=" text-center text-secondary mt-5 mb-3">Boder Info...</h3>
+  <h3 class=" text-center text-success fw-semibold mt-4 mb-3">Boder Info...</h3>
 
-  <table class=" table table-striped">
+  <table class=" table table-striped table-responsive">
     <tr class=" text-nowrap">
       <th>Border Name</th>
       <th>Border Meal</th>
