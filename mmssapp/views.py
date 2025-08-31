@@ -73,7 +73,7 @@ def Create_Details(request):
         aditonalCost = request.POST['aditonalCost']
         
         tmc2 = int(tmc)
-        totalMeal2 = int(totalMeal)
+        totalMeal2 = float(totalMeal)
         meal_charge = float(tmc2/totalMeal2)
         
         # pass all data in database
