@@ -31,7 +31,7 @@ class calculate_cost(models.Model):
   mess = models.OneToOneField(mess_details, on_delete=models.CASCADE, related_name='cost')
   totalMounthlyCost = models.IntegerField(default=0)
   totalMeal = models.IntegerField(default=0)
-  aditonalCost = models.IntegerField(default=0)
+  aditonalCost = models.DecimalField(max_digits=6, decimal_places=1, default=0.0)
   mealCharge = models.DecimalField(max_digits=6, decimal_places=3, default=0.000)
   
   def __str__(self):
