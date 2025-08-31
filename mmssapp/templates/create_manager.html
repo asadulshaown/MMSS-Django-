@@ -1,5 +1,6 @@
 
 
+
   {% load static %}
 
   <!DOCTYPE html>
@@ -16,23 +17,11 @@
 
     <div class=" container bg-white rounded border border-1 mt-4">
 
-      <h1 class=" text-center mt-2 text-success fw-bold">Mass management System</h1>
+      <h1 class=" text-center mt-2 text-success fw-semibold">Mass management System</h1>
 
       <div class=" d-flex justify-content-between">
-        <a class=" btn btn-outline-secondary me-2" href="{% url 'home_page' %}">Home</a>
+        <a class=" btn btn-outline-secondary me-2" href="{% url 'home_page' %}">Back</a>
         <!-- <a class=" btn btn-dark me-2" href="{% url 'views_page' %}">Views</a> -->
-    </div>
-
-    <hr>
-    <hr>
-
-    <div class=" d-md-flex gap-md-3 justify-content-around mt-4">
-      <div class=" d-flex ">
-        <h3 class="fw-semibold text-success me-2">Manager Name:</h3>
-        <h3 class=" text-muted fst-italic">{{manager.managerName}}</h3>
-        <!-- managerName come from manager table by the Create_Manager views.py -->
-      </div>
-           
     </div>
 
     <hr>
@@ -44,19 +33,11 @@
       <div class=" d-md-flex gap-md-3 justify-content-around">
 
         <div class="d-grid justify-content-center">
-          <strong class="">Mess Name: (15C)</strong>
-          <input class=" p-2" type="text" name="messName"  placeholder="Enter mass name" maxlength="15" autofocus required>
-        </div>
-
-        <div class="d-grid justify-content-center">
-          <strong class="" >Date</strong>
-          <input class=" p-2" type="date" name="mounthName"  placeholder="Enter Date" required>
+          <strong class="">Manager Name: (15C)</strong>
+          <input class=" p-2" type="text" name="managerName"  placeholder="Enter manager name" maxlength="15" autofocus required>
         </div>
         
-        <div class="d-grid justify-content-center">
-          <strong class="" >Address: (15C) </strong>
-          <input class=" p-2" type="text" name="address" placeholder="Enter address" maxlength="15" required>
-        </div>
+        
       </div>
 
       <div class=" d-flex justify-content-center mt-4 mb-5">

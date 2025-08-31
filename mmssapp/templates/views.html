@@ -14,55 +14,53 @@
   <div class=" container bg-white border border-1 rounded mt-4">
     <h1 class=" text-center text-success fw-bold mt-4 d-print-none">Mass management System</h1>
 
-    <a  class=" btn btn-outline-secondary" href="{% url 'home_page' %}">Home</a>
+    <a  class=" btn btn-outline-secondary d-print-none" href="{% url 'home_page' %}">Home</a>
     <hr>
     <hr>      
 
 
-  <div class="d-md-flex justify-content-between mt-4">
-    {% for item in data %}
-    <div class=" d-inline-flex">
+  <div class="d-md-flex d-print-grid gap-2 justify-content-between mt-4">
+    <div class=" d-inline-flex ">
       <h3 class=" fw-semibold text-success"> Mass Name:- </h3>
-      <h3 class=" text-secondary fst-italic">{{item.messName}}</h3>
+      <h3 class=" text-secondary fst-italic">{{mess.messName}}</h3>
     </div>
 
     <div class=" d-inline-flex">
-      <h3 class="fw-semibold text-success">Mounth Name:- </h3>
-      <h3 class=" text-secondary fst-italic">{{item.mounthName}}</h3>
+      <h3 class="fw-semibold text-success">Date:- </h3>
+      <h3 class=" text-secondary fst-italic">{{mess.date}}</h3>
     </div>
 
     <div class=" d-inline-flex">
       <h3 class="fw-semibold text-success"> Address:- </h3>
-      <h3 class="text-secondary fst-italic">{{item.address}}</h3>
-    </div>
-    {% endfor %}  
+      <h3 class="text-secondary fst-italic">{{mess.address}}</h3>
+    </div> 
   </div>
 
   <hr>
   <hr>
 
-  <div class="d-md-flex justify-content-between">
-    {% for item in data2 %}
+  <div class="d-md-flex d-print-grid justify-content-between">
+    
     <div class=" d-inline-flex">
       <h3 class=" text-success fw-semibold m-auto">Manager Name:- </h3>
-      <h4 class="m-auto">{{item.managerName}}</h4>
+      <h4 class="m-auto">{{manager.managerName}}</h4>
     </div>
 
     <div class=" d-inline-flex">
       <h3 class=" text-success fw-semibold m-auto">Meal Charge:- </h3>
-      <h4 class=" m-auto">{{item.mealCharge}}</h4>
+      <h4 class=" m-auto">{{cost.mealCharge}}</h4>
     </div>
 
     <div class=" d-inline-flex">
       <h3 class=" text-success fw-semibold m-auto">Total Mountly Cost:- </h3>
-      <h4 class=" m-auto">{{item.totalMounthlyCost}}</h4>
+      <h4 class=" m-auto">{{cost.totalMounthlyCost}}</h4>
     </div>
 
     <div class=" d-inline-flex">
       <h3 class=" text-success fw-semibold m-auto">Total Meal:- </h3>
-      <h4 class=" m-auto">{{item.totalMeal}}</h4>
+      <h4 class=" m-auto">{{cost.totalMeal}}</h4>
     </div>
-    {% endfor %}
+
   </div>
 
   <hr>
@@ -85,7 +83,7 @@
       <th>Additional Cost</th>
     </tr>
 
-    {% for item in data3 %}
+    {% for item in border %}
     <tr>
       <td>{{ item.BoderName }}</td>
       <td>{{ item.BoderMeal }}</td>

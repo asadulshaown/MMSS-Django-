@@ -13,16 +13,12 @@
   <div class=" container bg-white border border-1 rounded mt-4">
    
     <div class="">
-      <h1 class=" text-center text-success mt-2 ">Mass management System</h1>
+      <h1 class=" text-center text-success mt-2 fw-bold ">Mass management System</h1>
        <a class=" btn btn-outline-secondary" href="{% url 'create_details' %}">Back</a>
 
     </div>
     <hr>
     <hr>
-
-    <!-- <div class=" mt-5 d-flex justify-content-end">
-    <a class=" btn btn-dark " href="{% url 'views_page' %}">Views</a>
-    </div> -->
 
       <!-- third form -->
     <form class=" mt-5 mb-4" method="post">
@@ -42,9 +38,7 @@
 
         <div class="d-grid justify-content-center mb-3 mb-md-0">
           <strong>Meal Charge(MC): </strong>
-          {% for i in data2 %}
-          <input class=" p-2" type="number" min="0" name="mealCharge"  value="{{ i.mealCharge }}" step="any" placeholder="Meal Charge"  >
-          {% endfor %}
+          <input class=" p-2" type="number" min="0" name="mealCharge"  value="{{ cost.mealCharge }}" step="any" placeholder="Meal Charge"  >
         </div>
         
         <div class="d-grid justify-content-center mb-3 mb-md-0">

@@ -18,8 +18,15 @@
     <hr class=" text-light">
 
     <div class=" d-flex gap-3 justify-content-center mt-4 ">
-      <a class=" btn btn-success" href="{% url 'document_page' %}"> Create New Document</a>
-      <!-- <a class=" btn btn-success me-2" href="{% url 'views_page' %}">Views</a> -->
+      <a class=" btn btn-success" href="{% url 'create_manager' %}"> Create New Document</a>
+      
+      <form action="" method="post">
+        {% csrf_token %}
+        <input class=" p-2 border border-1 border-info rounded " type="text" name="search" placeholder="Search Manager">
+        <button class=" p-2 border border-2 border-secondary rounded" type="submit">
+        <img class=" " src="{% static 'images/search.png' %}" alt="search" >
+        </button>
+      </form>
     </div>
 
     <div class=" mt-4 mb-4">
