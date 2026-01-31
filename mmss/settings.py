@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-q6k0egjsiua!n$wbs!zgyaa250jz1wo!i*(kzxjs^r&s46%t2g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['asa27403.pythonanywhere.com']
 
 
 # Application definition
@@ -118,7 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = '/home/asa27403/MMSS-Django-/staticfiles'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
